@@ -51,13 +51,13 @@ def inicializar_poblacion(tamanio_poblacion, longitud_cromosoma):
 ###################################################################
 # Seleccion por torneo
 ###################################################################
-def seleccion_torneo(poblacion):  # tournament selection
-    tournament = random.sample(range(len(poblacion)), k=3)
-    tournament_fitnesses=[]
+def seleccion_torneo(poblacion):  # Seleccion de Torneo
+    torneo = random.sample(range(len(poblacion)), k=3) #se ponen a competir con 3 elementos y se devuelvre el indice del mejor
+    aptitup_torneo=[]
     for i in range(0,3):
-        tournament_fitnesses = aptitud(poblacion[tournament[i]])
-    winner_index = tournament[np.argmax(tournament_fitnesses)]
-    return poblacion[winner_index]
+        aptitup_torneo = aptitud(poblacion[torneo[i]])
+    indice_ganador = torneo[np.argmax(aptitup_torneo)]
+    return poblacion[indice_ganador] 
 #################################################################
 
 ###################################################################
@@ -171,4 +171,3 @@ plt.xlabel('Generación')
 plt.ylabel('Aptitud')
 plt.legend(['Mejor Aptitud'])
 plt.show()
-
