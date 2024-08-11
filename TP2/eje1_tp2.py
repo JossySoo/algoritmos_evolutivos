@@ -1,5 +1,5 @@
 # ..................................................................................
-# algoritmo PSO que minimiza la funcion unimodal f(x) = sin(x) + sin(x^2)
+# algoritmo PSO que minimiza la funcion unimodal f(x) = 2*np.sin(x)-(x**2)/2
 # ..................................................................................
 
 import numpy as np
@@ -112,8 +112,6 @@ plt.show()
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-# Asumimos que la función pso(num_particulas) está definida y retorna (solucion_opt, valor_opt, gbest_arr)
 
 # Cantidades de partículas que quieres evaluar
 num_particulas_list = [2, 4, 10, 100, 200, 400]
