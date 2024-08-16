@@ -13,19 +13,19 @@ from matplotlib import pyplot as plt
 
 # función objetivo a maximizar
 def f(x):
-    return 500 * x[0] + 400 * x[1]  # funcion objetivo: 3x1 + 5x2
+    return 500 * x[0] + 400 * x[1]  # 500x1 + 400x2
 # primera restriccion
 def g1(x):
-    return 300 * x[0] + 400 * x[1] <= 127000  # restriccion: x1 <= 4
+    return 300 * x[0] + 400 * x[1] <= 127000  # 300x1+400x2 <= 127000
 # segunda restriccion
 def g2(x, k):   # constante k para poder parametrizar la cantidad de impresoras 2 
-    return 20 * x[0] + k * x[1]  <= 4270  # restriccion: 2x2 <= 12
+    return 20 * x[0] + k * x[1]  <= 4270  # 2x1+ 3x2   <= 4270
 # tercera restriccion
 def g3(x):
-    return  x[0] >= 0  # restriccion: 3x1 + 2x2 <= 18
+    return  x[0] >= 0  # restriccion: x1 >=0
 # cuarta restriccion
 def g4(x):
-    return  x[1] >= 0  # restriccion: 3x1 + 2x2 <= 18
+    return  x[1] >= 0  # restriccion: x2 >=0
 
 #funcion parametrizable de optimizacion a
 def algo(k, n_particles, n_dimensions, max_iterations, c1, c2, w):
