@@ -1,18 +1,13 @@
 # .................................................................
 # Ejemplo de PSO con restricciones
 #      maximizar     375x1 + 275x2 +475x3 + 325x4
-#
-#      sujeto a:
-#                     x1        <= 4
-#                           2x2 <= 12
-#                     3x1 + 2x2 <= 18
 # .................................................................
 import numpy as np
 from matplotlib import pyplot as plt
 
 # función objetivo a maximizar
 def f(x):
-    return 375* x[0] + 275* x[1] + 475* x[2] + 325* x[3]  # funcion objetivo: 3x1 + 5x2
+    return 375* x[0] + 275* x[1] + 475* x[2] + 325* x[3]
 
 # primera restriccion
 def g1(x):
@@ -20,7 +15,7 @@ def g1(x):
 
 # segunda restriccion
 def g2(x):
-    return 3.5* x[0] + 3* x[1] + 3* x[2] + 2* x[3] <= 960  # restriccion: 2x2 <= 12
+    return 3.5* x[0] + 3* x[1] + 3* x[2] + 2* x[3] <= 960 
 
 # tercera restriccion
 def g3(x):
@@ -119,7 +114,7 @@ plt.show()
 
 # segunda restriccion
 def g2(x):
-    return 3.5* x[0] + 2* x[1] + 3* x[2] + 2* x[3] <= 960  # restriccion: 2x2 <= 12
+    return 3.5* x[0] + 2* x[1] + 3* x[2] + 2* x[3] <= 960
 
 np.random.seed(153)
 
